@@ -7,7 +7,7 @@ const  sendOTP = async (email, otp) => {
       service: 'gmail',
       auth: {
         user: "diyoraharsh6@gmail.com",
-        pass: "",
+        pass: "xrsj twdh fcfl ofdt",
       },
     });
 
@@ -22,5 +22,28 @@ const  sendOTP = async (email, otp) => {
     console.log('OTP sent successfully!');
 };
 
+const sendingMail = (to, subject, html) => {
+  const sendmail = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: "diyoraharsh6@gmail.com",
+      pass: "xrsj twdh fcfl ofdt",
+    },
+  });
 
-module.exports = sendOTP
+  const mailOptions = {
+          from: "diyoraharsh6@gmail.com",
+          to: to,
+          subject,
+          html
+      }
+      sendmail.sendMail(mailOptions, (err, info) => {
+          if (err) {
+              console.log(err);
+          }
+          else {
+              console.log(info);
+          }
+      })
+  }
+module.exports = {sendOTP , sendingMail}

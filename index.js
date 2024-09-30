@@ -8,7 +8,7 @@ const ejs = require('ejs')
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-const PORT = process.env.PORT || 8090;
+const PORT = 8090;
 
 // Middleware
 app.use(express.json());
