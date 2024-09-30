@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    <!-- Create a new blog post -->
+    <h1>Create a New Blog Post</h1>
+    <form action="/blog/blogpost" method="post">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" required></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- list out of the new blog post -->
+     <h1>Blog Posts</h1>
+    <% for(let i=0; i<blogPosts.length; i++){ %>
+        <h2><a href="http://localhost:8090/blog/<%= blogPosts[i].id %>"><%= blogPosts[i].title %></a></h2>
+        <p><%= blogPosts[i].content %></p>
+        <p>Posted by <%= blogPosts[i].author %></p>
+    <% } %>
+
+</body>
+</html>
