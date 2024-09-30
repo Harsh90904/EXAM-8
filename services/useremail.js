@@ -7,7 +7,7 @@ const  sendOTP = async (email, otp) => {
       service: 'gmail',
       auth: {
         user: "diyoraharsh6@gmail.com",
-        pass: "xrsj twdh fcfl ofdt",
+        pass: "",
       },
     });
 
