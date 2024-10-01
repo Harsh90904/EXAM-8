@@ -1,6 +1,5 @@
 const nodemailer = require('nodemailer');
 
-// Function to send OTP via email
 const  sendOTP = async (email, otp) => {
 
     const otpsend = nodemailer.createTransport({
@@ -12,7 +11,7 @@ const  sendOTP = async (email, otp) => {
     });
 
     const mailOptions = {
-      from: process.env.EMAIL,
+      from:"diyoraharsh6@gmail.com" ,
       to: email,
       subject: 'OTP Verification',
       text: `Your OTP is ${otp}.`,
